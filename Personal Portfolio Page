@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Page</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0%;
+            padding: 0%;
+            background-color:aliceblue;
+        }
+        header{
+            background-image: url('https://i.pinimg.com/564x/af/bf/fb/afbffb4c96900d5742489d5c828a5954.jpg');
+            color: rgb(155, 155, 155);
+            text-align: center;
+            padding:3%;
+        }
+        .main{
+            background-color: rgb(199, 193, 193);
+            margin: 2%;
+            padding: 2% auto;
+            max-width: 1500px;
+            box-shadow: 10px rgba(11, 11, 11, 0.1);
+        }
+        h1{
+            font-size: x-large;
+            margin: -1;            
+        }
+        h3{
+            font-size: x-large;
+            margin: -1;            
+        }
+        p{
+            line-height: 2mm;
+            height: 1mm;
+            list-style:armenian;
+        }
+        footer{
+            background-image: url('https://i.pinimg.com/564x/cc/ec/cb/cceccb66a1d715773fa2c24d09dd765f.jpg');
+            text-align: center;
+            padding:2%;
+            color: rgb(189, 195, 200) ;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Personal Portfolio</u></h1>
+        <h2>Hi👋🏻,<br>I'm Subhajyoti Prusty</h2>
+    </header>
+    <div class="main">
+        <section>
+            <h3>
+                <u>Personal Information:</u>
+            </h3>
+            <p>
+                <b>Name:</b>Subhajyoti Prusty
+            </p>
+            <p>
+                <b>College:</b>ITER,SOA University
+            </p>
+            <p>
+                <b>Branch:</b>CSE
+            </p>
+            <p>
+                <b>Sem:</b>3<sup>rd</sup>
+            </p>
+            <img src = "me.jpg" alt="My Pic" length ="200" width="200" >
+            <p>
+                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo</b>
+            </p>
+        </section>
+        
+        <section>
+            <h3><u>Projects:</u></h3>
+                <ul>
+                    <li>xxxxx xxxxx xxx</li>
+                    <li>xxx xxxxx xxxx</li>
+                    <li>xxx xxx xx xxxx  xxx</li>
+                </ul>
+        </section>
+        
+        <section>
+            <h3><u>Contact:</u></h3>
+            <p><b>Email:</b>Subha**********@gmail.com</p>
+            <a href="https://www.linkedin.com/in/subhajyoti-prusty-46b498257/"><img src="https://pbs.twimg.com/profile_images/1661161645857710081/6WtDIesg_400x400.png"alt="linkedin" length ="30" width="30"></a>
+        </section>
+    </div>
+    <footer>
+        <p><b>
+            &copy; Copyright 2023 by SUBHAJYOTI.
+        </b></p>
+    </footer>
+</body>
+</html>
