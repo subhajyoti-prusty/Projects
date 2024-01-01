@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Martel+Sans:wght@600&family=Paprika&family=Space+Mono&family=Yuji+Hentaigana+Akari&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.main{
+    background-image: url(Sources/Img/Background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: max(2000px ,100vw);
+    height: 80vh;
+    position: relative;
+}
+
+.main .topbox{
+    height: 80vh;
+    width: 100%;
+    opacity: 40%;
+    position:absolute;
+    top: 0%;
+    background-color: black;
+}
+
+nav{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 63vw;
+    height: 48px;
+}
+
+nav img{
+    color: rgb(229,9,20);
+    fill: currentColor;
+    width: 120px;
+    z-index: 10;
+    position: relative;
+}
+
+nav button{ 
+    z-index: 10;
+    position: relative;
+}
+
+.midtext{
+    height: 100%;
+    display: flex;
+    position: relative;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
