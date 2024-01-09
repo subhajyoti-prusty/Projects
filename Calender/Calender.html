@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .calendar {
+            width: 300px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .month {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .weekdays {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ecf0f1;
+            padding: 8px;
+        }
+
+        .weekdays div {
+            text-align: center;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            padding: 10px;
+        }
+
+        .day {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ecf0f1;
+        }
+
+        .day:hover {
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calendar">
+    <div class="month">
+        <h2>November 2023</h2>
+    </div>
+    <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+    <div class="days">
+        <!-- Days will be dynamically generated using JavaScript -->
+    </div>
+</div>
+
+<script>
+    // Dynamically generate the days of the month
+    const daysContainer = document.querySelector('.days');
+    const daysInMonth = new Date(2023, 10, 0).getDate(); // 10 represents November (0-indexed)
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('day');
+        dayElement.textContent = day;
+        daysContainer.appendChild(dayElement);
+    }
+</script>
+
+</body>
+</html>

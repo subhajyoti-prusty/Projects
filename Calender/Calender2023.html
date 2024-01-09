@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar 2023</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calendar {
+            border-collapse: collapse;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            width: 300px;
+        }
+
+        .calendar th, .calendar td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .calendar th {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .calendar td {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calendar td:hover {
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function generateCalendar(year, month) {
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+        const calendarTable = document.createElement('table');
+        calendarTable.classList.add('calendar');
+
+        // Create the header row with navigation buttons and days of the week
+        const headerRow = calendarTable.createTHead().insertRow();
+        const prevMonthButton = document.createElement('th');
+        prevMonthButton.textContent = '<';
+        prevMonthButton.onclick = function () {
+            clearCalendar();
+            generateCalendar(year, month - 1);
+        };
+        headerRow.appendChild(prevMonthButton);
+
+        const monthNameCell = document.createElement('th');
+        monthNameCell.colSpan = 5;
+        monthNameCell.textContent = new Date(year, month, 1).toLocaleString('default', { month: 'long', year: 'numeric' });
+        headerRow.appendChild(monthNameCell);
+
+        const nextMonthButton = document.createElement('th');
+        nextMonthButton.textContent = '>';
+        nextMonthButton.onclick = function () {
+            clearCalendar();
+            generateCalendar(year, month + 1);
+        };
+        headerRow.appendChild(nextMonthButton);
+
+        const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const daysOfWeekRow = calendarTable.insertRow();
+        daysOfWeek.forEach(day => {
+            const th = document.createElement('th');
+            th.textContent = day;
+            daysOfWeekRow.appendChild(th);
+        });
+
+        // Create the days
+        let dayCount = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = calendarTable.insertRow();
+
+            for (let j = 0; j < 7; j++) {
+                if ((i === 0 && j < firstDayOfMonth) || dayCount > daysInMonth) {
+                    row.insertCell();
+                } else {
+                    const cell = row.insertCell();
+                    cell.textContent = dayCount;
+                    cell.onclick = function () {
+                        alert(`You clicked on ${monthNameCell.textContent} ${cell.textContent}, ${year}`);
+                    };
+                    dayCount++;
+                }
+            }
+        }
+
+        document.body.appendChild(calendarTable);
+    }
+
+    function clearCalendar() {
+        const existingCalendar = document.querySelector('.calendar');
+        if (existingCalendar) {
+            document.body.removeChild(existingCalendar);
+        }
+    }
+
+    // Display the initial calendar for January 2023
+    generateCalendar(2023, 0);
+</script>
+
+</body>
+</html>
